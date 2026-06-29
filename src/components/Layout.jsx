@@ -50,7 +50,12 @@ export default function Layout({ children }) {
         </div>
         <div className="px-5 pt-4 border-t border-white/10">
           <BackupControls />
-          <div className="text-[11px] text-slate-500 mt-3">Dane lokalne (localStorage) · v1.0</div>
+          <button
+            onClick={() => { localStorage.removeItem('panel.auth'); location.reload() }}
+            className="mt-3 w-full text-xs text-slate-400 hover:text-white transition-colors flex items-center justify-center gap-1.5 py-1.5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" y1="12" x2="9" y2="12" /></svg>
+            Zablokuj panel
+          </button>
         </div>
       </aside>
 

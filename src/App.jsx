@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout.jsx'
+import Login from './components/Login.jsx'
 import Wydarzenia from './pages/Wydarzenia.jsx'
 import EventForm from './pages/EventForm.jsx'
 import Miesiac from './pages/Miesiac.jsx'
@@ -9,6 +11,8 @@ import Zobowiazania from './pages/Zobowiazania.jsx'
 import Bilety from './pages/Bilety.jsx'
 
 export default function App() {
+  const [unlocked, setUnlocked] = useState(() => localStorage.getItem('panel.auth') === 'ok')
+  if (!unlocked) return <Login onOk={() => setUnlocked(true)} />
   return (
     <Layout>
       <Routes>
