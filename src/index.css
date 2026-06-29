@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-slate-100 text-slate-800 font-sans antialiased;
+  }
+  * { box-sizing: border-box; }
+  /* table inputs */
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type='number'] { -moz-appearance: textfield; }
+}
+
+@layer components {
+  .card { @apply bg-white rounded-xl border border-slate-200 shadow-sm; }
+  .card-dark { @apply bg-navy text-white rounded-xl shadow-lg; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-gold { @apply btn bg-gold text-navy hover:bg-gold-dk px-4 py-2; }
+  .btn-navy { @apply btn bg-navy text-white hover:bg-navy-700 px-4 py-2; }
+  .btn-ghost { @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2; }
+  .btn-sm { @apply px-3 py-1.5 text-sm; }
+  .input { @apply w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-gold focus:ring-2 focus:ring-gold/30 transition; }
+  .input-num { @apply input text-right tabular-nums; }
+  .label { @apply block text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1; }
+  .th { @apply px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-slate-500; }
+  .td { @apply px-3 py-2 text-sm; }
+  .pill { @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold; }
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
